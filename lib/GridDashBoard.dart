@@ -4,82 +4,90 @@ import 'package:google_fonts/google_fonts.dart';
 class GridDashBoard extends StatelessWidget {
 
   Items item1=new Items(
-      title: "Calender",
-      subtitle: "January,thursday",
-      event: "3 Events",
-      img: "assets/calender.png"
+      title: "Apple",
+      subtitle: "",
+      event: "",
+      img: "assets/Apple.png"
   );
   Items item2=new Items(
-      title: "Groceries",
-      subtitle: "BoCali,Apple",
-      event: "4 Items",
-      img: "assets/groceries.png"
+      title: "Green Apple",
+      subtitle: "",
+      event: "",
+      img: "assets/green_apple.png"
   );
   Items item3=new Items(
-      title: "Locations",
-      subtitle: "Simmakal,Madurai",
-      event: "3 Events",
-      img: "assets/map.png"
+      title: "Black Apple",
+      subtitle: "",
+      event: "",
+      img: "assets/blk_apple.png"
   );
   Items item4=new Items(
-      title: "Activity",
-      subtitle: "Rose Favirited your post",
-      event: "2 Events",
-      img: "assets/gear.png"
+      title: "Mango",
+      subtitle: "",
+      event: "",
+      img: "assets/mango.png"
   );
   Items item5=new Items(
-      title: "To do",
-      subtitle: "Home work,Design",
-      event: "3 Events",
-      img: "assets/man.png"
+      title: "Papaya",
+      subtitle: "",
+      event: "",
+      img: "assets/papaya.png"
   );
   Items item6=new Items(
-      title: "festival",
-      subtitle: "Traditional Special",
-      event: "5 Events",
-      img: "assets/celebration.png"
+      title: "Pine Apple",
+      subtitle: "",
+      event: "",
+      img: "assets/pine_apple.png"
   );
   Items item7=new Items(
-      title: "Future Goal",
-      subtitle: "On Focus",
-      event: "3 Events",
-      img: "assets/goal.png"
+      title: "Strawberry",
+      subtitle: "",
+      event: "",
+      img: "assets/strawberry.png"
   );
   Items item8=new Items(
-      title: "Current News",
-      subtitle: "Vision",
-      event: "3 Events",
-      img: "assets/news.png"
+      title: "Grape",
+      subtitle: "",
+      event: "",
+      img: "assets/berry.png"
   );
 
   @override
   Widget build(BuildContext context) {
     List <Items> MyList=[item1,item2,item3,item4,item5,item6,item7,item8];
-    var color=0xff453658;
     return Flexible(
       child: GridView.count(
           childAspectRatio: 1.0,
           padding: EdgeInsets.only(left: 16,right: 16),
           crossAxisCount: 2,
-          crossAxisSpacing: 18,
-          mainAxisSpacing: 18,
+          crossAxisSpacing: 20,
+          mainAxisSpacing: 20,
           children: MyList.map((data){
             return Container(
               decoration: BoxDecoration(
-                color: Color(color),borderRadius: BorderRadius.circular(10),
+                gradient: LinearGradient(
+                  begin: Alignment.bottomCenter,
+                  colors: [
+                    Colors.white38.withOpacity(.4),
+                    Colors.white38.withOpacity(.1),
+                  ]
+                ),
+                borderRadius: BorderRadius.circular(12),
+                image: DecorationImage(
+                 image: AssetImage(data.img),
+                  fit: BoxFit.contain,
+                  alignment: Alignment.center
+
+                )
               ),
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.end,
                 children: <Widget>[
-                  Image.asset(data.img,width: 42,),
-                  SizedBox(
-                    height: 14,
-                  ),
                   Text(data.title,style: GoogleFonts.openSans(
                     textStyle: TextStyle(
                       color: Colors.white,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),),
                   SizedBox(
@@ -87,8 +95,8 @@ class GridDashBoard extends StatelessWidget {
                   ),
                   Text(data.subtitle,style: GoogleFonts.openSans(
                     textStyle: TextStyle(
-                      color: Colors.white38,
-                      fontSize: 10,
+                      color: Colors.white60,
+                      fontSize: 18,
                       fontWeight: FontWeight.w600,
                     ),
                   ),),

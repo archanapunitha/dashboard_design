@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 void main(){
   runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
     home: MyApp(),
   ));
 }
@@ -22,7 +23,7 @@ class _MyAppState extends State<MyApp> {
         Column(
           children: <Widget>[
             SizedBox(
-              height: 50,
+              height: 40,
             ),
             Padding(
               padding: EdgeInsets.only(left: 16,right: 16),
@@ -32,31 +33,30 @@ class _MyAppState extends State<MyApp> {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
-                      Text("Calender Diary",style: GoogleFonts.openSans(
+                      Text("Foody Fruits",style: GoogleFonts.openSans(
                           textStyle:TextStyle(
-                            color: Colors.red,
-                            fontSize: 18,
+                            color: Colors.amberAccent,
+                            fontSize: 25,
                             fontWeight: FontWeight.bold,
                           )
                       ),),
                       SizedBox(
-                        height: 4,
+                        height: 8,
                       ),
                       Text("Home",style: GoogleFonts.openSans(
                           textStyle: TextStyle(
                             color: Colors.black,
-                            fontSize: 15,
+                            fontSize: 18,
                             fontWeight: FontWeight.bold,
                           )
                       ),)
                     ],
                   ),
                   IconButton(
-                      alignment: Alignment.topCenter,
+                      alignment: Alignment.topRight,
                       icon: SvgPicture.asset("assets/notification.svg",
-                        height: 25.0,),
+                        height: 30.0,),
                       onPressed: (){
-
                       }),
                 ],
               ),
